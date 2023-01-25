@@ -1,0 +1,239 @@
+h1 {
+  text-align: center;
+  color: DodgerBlue;
+  font-weight: 900;
+  letter-spacing: 2px;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: white;
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+
+h2 {
+font-size: 15.5px;
+font-weight: 900;
+text-align: center;
+background-color: DodgerBlue;
+}
+
+h4 {
+  text-align: center;
+  color: black;
+  font-weight: 800;
+  letter-spacing: 5px;
+  font-size: 90px;
+  -webkit-text-stroke-width: 0.001px;
+  -webkit-text-stroke-color: white;
+}
+
+.display {
+  display: inline-block;
+  justify-content: center;
+  color: black;
+}
+
+
+.buttons {
+display: block;
+}
+
+.buttons button {
+display: block;
+}
+
+ div {
+top: 50%;
+}
+
+.column {
+/*   width: 18%;
+  padding: 25px 0px; */
+  color: white;
+}
+
+ img {
+  display: block;
+  /* height: 100px; */
+  width: 75px;
+  height: 75px;
+  width: auto;
+/*   margin: 20px; */
+  border: 5px solid white;
+}
+
+.shopLogo {
+margin: auto;
+width: 75%;
+height: 50%;
+
+}
+
+placeholder {
+color: DodgerBlue;
+}
+
+.songs p {
+  font-size: 22px;
+  height: 100px;
+  font-weight: bold;
+/*   margin: 20px; */
+  font-weight: 950;
+  color: white;
+}
+
+.artists p {
+  font-size: 18px;
+  height: 100px;
+/*   margin: 20px; */
+  font-weight: 550;
+  font-style: oblique;
+  color: white;
+
+}
+
+.lengths p {
+  font-size: 20px;
+  height: 100px;
+/*   margin: 20px; */
+  text-align: right;
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+a {
+letter-spacing: 3px;
+background: -webkit-linear-gradient(#eeeeee, #333333);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+a:hover {
+  color: white;
+}
+
+.links a {
+  display: block;
+  font-size: 18px;
+  height: 100px;
+  font-weight: bold;
+/*   margin: 20px; */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+#totalL {
+  letter-spacing: 5px;
+  margin: 15px;
+  color: black;
+  font-size: 30px;
+  margin-top: 30px;
+  text-align: center;
+  
+  color: DodgerBlue;
+  font-weight: 900;
+  letter-spacing: 5px;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: white;
+  margin-bottom: 20px;
+}
+
+#totalW {
+  letter-spacing: 5px;
+  margin: 15px;
+  color: black;
+  font-size: 30px;
+  margin-top: 30px;
+  text-align: center;
+  
+  color: DodgerBlue;
+  font-weight: 900;
+  letter-spacing: 5px;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: white;
+  margin-bottom: 20px;
+}
+
+.form {
+  width: 75%;
+  margin: 0 auto 20px auto;
+  font-size: 20px;
+  justify-content: center;
+}
+
+.form p {
+  color: white;
+  font-size: 25px;
+  font-style: obilque;
+  margin: 10px;
+}
+
+input {
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 7px;
+  color: DodgerBlue;
+}
+
+button {
+  font-size: 14px;
+  padding: 5px 10px;
+  color: white;
+  border-radius: 7px;
+  background-color: DodgerBlue;
+  border: 2px solid white;
+}
+
+.delete {
+  background-color: red;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body {
+/*   font-weight: 750;
+  background-image: url("https://wallpapercave.com/wp/96sqlm9.jpg");
+  background-repeat: no-repeat;
+  background-size: auto; */
+  background-color: gold;
+  color: white;
+}
+
+.bigdiv {
+width: 100%;
+display:inline-block;
+margin-left: auto;
+margin-right: auto;
+justify-content: center;
+margin-bottom: 5px;
+}
+
+.SLUitem {
+font-size: 25px;
+background: white;
+justify-content: center;
+margin-left: auto;
+margin-right: auto;
+justify-content: center;
+display: flex;
+}
+
+.flex-container {
+  display: flex;
+  background-color: DodgerBlue;
+  margin: auto;
+  justify-content: center;
+  align-items:center;
+  width: 100%;
+}
+
+.flex-container > div {
+  background-color: white;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+  border-radius: 10px;
+}
+

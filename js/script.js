@@ -3,33 +3,31 @@ let Eggs = {Item:"Carton Of Eggs",
           Price: 5.99,
           Quantity: 1,
           Aisle: "Meat",
-          img_link: "https://cdn.glitch.global/34779279-68be-4516-abb4-8de4b6fcaae0/99-994169_macronutrients-proteins-lipids-carbohydrates-etc-classification-of-food-ppt.png?v=1674633864461"
+          Image: "https://cdn.glitch.global/34779279-68be-4516-abb4-8de4b6fcaae0/99-994169_macronutrients-proteins-lipids-carbohydrates-etc-classification-of-food-ppt.png?v=1674633864461"
           }
 let Bask = {Item:"Gallon Of Milk",
           Price: 7.50,
           Quantity: 1,
           Aisle: "Produce",
-          img_link: "https://cdn.glitch.global/34779279-68be-4516-abb4-8de4b6fcaae0/11665860299jkx6a5ldbraz291mud5bw8hxhbmjysbsp3nijx6x50mbwaxgif05y8awqaoskakhez5vdyjp9ortoi4nmqxfjn7phlkxlbrbvrz9.png?v=1674633864118"
+          Image: "https://cdn.glitch.global/34779279-68be-4516-abb4-8de4b6fcaae0/11665860299jkx6a5ldbraz291mud5bw8hxhbmjysbsp3nijx6x50mbwaxgif05y8awqaoskakhez5vdyjp9ortoi4nmqxfjn7phlkxlbrbvrz9.png?v=1674633864118"
           }
 let Mano = {Item:"Snickers Bar",
           Price: 1.99,
           Quantity: 1,
           Aisle: "Candy",
-          img_link: "https://cdn.glitch.global/34779279-68be-4516-abb4-8de4b6fcaae0/386-3861491_halloween-candy-border-clip-art-bowl-of-candy.png?v=1674633864697"
+          Image: "https://cdn.glitch.global/34779279-68be-4516-abb4-8de4b6fcaae0/386-3861491_halloween-candy-border-clip-art-bowl-of-candy.png?v=1674633864697"
           }
-
-// let total = 0;
-
+let buttoon;
 let defaultShopping = [Eggs, Bask, Mano];
   
   
 function display() {
   let shopInd = 0;
-  let total = 0;
+  let total = 0; 
   defaultShopping.forEach(function(good){
   console.log(good);
-  total += good.Price;
-  $('.display').append(`<div class="bigdiv"> <div class="flex-container"> <div><p>Item #${shopInd}</p></div> <div><img class="images" src=${good.img_link}></img></div> <div><p>${good.Item}</p></div> <div><p>${good.Price}</p></div> <div><p>x${good.Quantity}</p></div> <div><p>${good.Aisle}</p></div> <div><div class="buttons"><button class="up">↑</button> <button class="down">↓</button></div></div>  <div><div class="buttons"><button class="plus">+</button> <button class="minus"> --</button></div></div> <div><button class="delete"> DELETE </button></div> </div> </div>`);
+  total += good.Price * good.Quantity;
+  $('.display').append(`<div class="bigdiv"> <div class="flex-container"> <div><p>Item #${shopInd}</p></div> <div><img class="images" src=${good.Image}></img></div> <div><p>${good.Item}</p></div> <div><p>${good.Price}</p></div> <div><p>x${good.Quantity}</p></div> <div><p>${good.Aisle}</p></div> <div><div class="buttons"><button class="up">↑</button> <button class="down">↓</button></div></div>  <div><div class="buttons"><button class="plus">+</button> <button class="minus"> --</button></div></div> <div><button class="delete"> DELETE </button></div> </div> </div>`);
   shopInd++;
     
 // $('.display').append(`<div class="flex-container"> <div>1</div> <div>2</div> <div>3</div> <div>4</div> <div>5</div> </div>`);
@@ -69,7 +67,7 @@ let SNACKS = "https://cdn.glitch.global/34779279-68be-4516-abb4-8de4b6fcaae0/Sna
 let SWEETS = "https://cdn.glitch.global/34779279-68be-4516-abb4-8de4b6fcaae0/386-3861491_halloween-candy-border-clip-art-bowl-of-candy.png?v=1674633864697";
 let MISC = "https://cdn.glitch.global/34779279-68be-4516-abb4-8de4b6fcaae0/1191px-Empty_shopping_cart_clip_art.svg.png?v=1674633865182";
 
-  let userFullShop = {Item: userItem, Price: userPrice, Aisle: userAisle, Quantity: userAisle, Image: defaultImg};
+  let userFullShop = {Item: userItem, Price: userPrice, Quantity: userQuantity, Aisle: userAisle, Image: defaultImg};
   
 if (userAisle.toLowerCase() === "produce") {
 userFullShop.Image = PRODUCE;
@@ -113,7 +111,8 @@ userFullShop.Image = SWEETS;
 else {
 userFullShop.Image = MISC;
 }
-  
+
+console.log(userFullShop);
   
   console.log("testing here - add shop function");
   
@@ -149,9 +148,25 @@ $("body").on('click', 'button.up', function() {
   display();
 });
 
+
+$("body").on('click', 'button.down', function() {
+  console.log("MOVE MOVE MOVE");
+  let oneIndex = prompt("Please enter the index of this item");
+  let twoIndex = prompt("Please enter the index where you want to move this item to.");
+ 
+  let temp = defaultShopping[oneIndex];
+  
+  defaultShopping[oneIndex] = defaultShopping[twoIndex];
+  defaultShopping[twoIndex] = temp;
+  
+  emptyList();
+  display();
+});
+
 $("body").on('click', 'button.plus', function() {
+  // buttoon.addEventListener('onclick');
   console.log("Q CHANGE");
-  let thisItem = prompt("Please enter the index of this item");  
+  let thisItem = prompt("Please enter the index of this item");
   defaultShopping[thisItem].Quantity += 1;
   console.log(defaultShopping[thisItem].Quantity);
   emptyList();
@@ -159,9 +174,10 @@ $("body").on('click', 'button.plus', function() {
 });
 
 $("body").on('click', 'button.minus', function() {
+  // buttoon.addEventListener('onclick');
   console.log("Q CHANGE");
   let oneIndex = prompt("Please enter the index of this item");  
-  defaultShopping[oneIndex].Quantity--;
+  defaultShopping[oneIndex].Quantity -= 1;
   emptyList();
   display();
 });
@@ -170,6 +186,7 @@ $("body").on('click', 'button.delete', function() {
   console.log("DELETE DELETE DELETE");
   let delIndex = prompt("Enter the index of the item you want to remove.");
   // total -= defaultShopping[delIndex].Price;
+  // total -= Number(defaultShopping[delIndex].Price) * Number(defaultShopping[delIndex].Quantity);
   defaultShopping.splice(delIndex,1);
     console.log("seperator");
   console.log(defaultShopping);
